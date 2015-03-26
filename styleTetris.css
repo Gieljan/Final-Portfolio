@@ -3,8 +3,8 @@ body {
     background: #E1D4C0;
 }
 body, table {
-    font: 11px tahoma;
-    color: #DF013A;
+    font: 11px impact;
+    color: red;
 }
 
 /*** tetris 168,308 ***/
@@ -163,9 +163,9 @@ body, table {
 /*** area ***/
 
 #tetris-area {
-    background: #DF013A;
+    background: #CC6666;
     position: absolute;
-    width: 168px;
+    width: 190px;
     height: 308px;
     left: 131px;
     top: 1px;
