@@ -1,18 +1,6 @@
-/* This script and many more are available free online at
-The JavaScript Source!! http://www.javascriptsource.com
-Created by: Cezary Tomczak | http://gosu.pl/Licensed under: BSD
- */
 
 /*
- * PROJECT:  JsTetris
- * VERSION:  1.1.0
- * LICENSE:  BSD (revised)
- * AUTHOR:   (c) 2004 Cezary Tomczak
- * LINK:     http://gosu.pl/dhtml/JsTetris.html
- *
- * This script can be used freely as long as all
- * copyright messages are intact.
- */
+ * PROJECT:  Broken Tetris
 
 /**
  * Tetris Game
