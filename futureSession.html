@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-<p> hiii </p>
-</body>
+  <body>
+    <article class="session"></article>
+    
+    <section id="templates">
+      
+      <template id="session">
+        <h1 class="title">Do Not Repeat Yourself</h1>
+      
+        <section class="description"></section>
+      
+        <section class="tasks">
+          <h1>Tasks</h1>
+        </section>
+      </template>
+      
+      <template id="task">
+        <section class="task">
+          <h1 class="title"></h1>
+          <section class="description"></section>
+          <section class="resources"></section>
+        </section>
+      </template>
+        
+      <template id="resource">
+        <li class="resource"><a></a></li>
+      </template>
+      
+    </section>
+  
+    <script src="sessionfs.js"></script>
+    <script src="scriptfs.js"></script>
+  </body>
+</html>
