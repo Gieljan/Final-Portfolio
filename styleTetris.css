@@ -4,7 +4,7 @@ body {
 }
 body, table {
     font: 11px tahoma;
-    color: #826C55;
+    color: #DF013A;
 }
 
 /*** tetris 168,308 ***/
@@ -163,7 +163,7 @@ body, table {
 /*** area ***/
 
 #tetris-area {
-    background: #FFFFFF;
+    background: #DF013A;
     position: absolute;
     width: 168px;
     height: 308px;
