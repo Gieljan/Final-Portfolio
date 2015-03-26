@@ -327,7 +327,7 @@ function Tetris() {
         this.up = 38;
         this.down = 40;
         this.left = 37;
-        this.right = 37;
+        this.right = 38;
         this.n = 78;
         this.r = 82;
         this.space = 32;
