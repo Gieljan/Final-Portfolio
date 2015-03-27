@@ -212,7 +212,7 @@ function Tetris() {
      */
     function Keyboard() {
 
-        this.up = 38;
+        this.up = 39;
         this.down = 37;
         this.left = 37;
         this.right = 38;
@@ -307,7 +307,7 @@ function Tetris() {
          */
         this.reset = function() {
             this.stop();
-            this.level = 9;
+            this.level = 0;
             this.time  = 0;
             this.apm   = 0;
             this.lines = 0;
