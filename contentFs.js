@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 let session = {};
 session.title = ‘Title’;
@@ -17,7 +17,7 @@ task1.resources = [
  },  
  {
     link: "http://www.google.com",
-description: “Link2
+description: “Link2"
 },
 {
   link: "http://www.google.com",
@@ -27,17 +27,17 @@ description: “Link2
 
 
 let task2 = {};
-task2.title = ‘Task ‘2;
-task2.description = ` < p > Theory about , discussion about the theory and how it relates back to coding – something that is mentioned as program. < /p>
+task2.title = 'Task2';
+task2.description = `<p>"Theory about , discussion about the theory and how it relates back to coding – something that is mentioned as program.</p>'
 
-<p>Subsection</p > `;
+<p>Subsection</p > ;
 
 task2.resources = [{
   link: "http://www.google.com",
   description: “Link1”
 }, {
   link: "http://www.google.com",
-  description: “link32
+  description: “link3""
 }, ];
 
 
