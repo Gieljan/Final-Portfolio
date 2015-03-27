@@ -1,9 +1,8 @@
-
-
 * { box-sizing: border-box; -moz-box-sizing: border-box; }
 
 *{
   font-family: Tahoma;
+  color: #2B2B25;
 }
 
 /* ! ! ! THIS IS THE MAIN WRAPPER ! ! ! */
@@ -27,8 +26,10 @@ div {
 .webTitle {
   text-align: center;
   font-size: 45px;
+  background-color: yellow;
+  border-radius: 20px 20px 20px 20px;
+  color: dark-grey;
   margin: 0 auto;
-  color: #000;
 }
 
 
@@ -87,7 +88,7 @@ a:hover {
 	width: 150px;
 	height: 150px;
 	-webkit-border-radius: 100%; 
-  border-radius: 50px 10px 20px 10px;
+  border-radius: 10px 50px 10px 50px;
   vertical-align:middle;
 }
 .avatar-frame2 img { margin-right:5px; }
@@ -110,7 +111,7 @@ a:hover {
 .header {
   height: 50%;
   width: 100%;
-  background-color: #F6E4ED;
+  background-color: #E6B800;
   border-radius:10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -154,7 +155,7 @@ a:hover {
   text-align: center;
   width: 100%;
   height: 35px;
-  background-color: #ddd;
+  background-color: #CCA714;
   padding-left: 10px;
   padding-top: 8px;
   margin-bottom: 10px;
@@ -174,7 +175,7 @@ a:hover {
   float: left;
   width: 66.31916666666667%;
   height: 84%;
-  background-color: #ddd;
+  background-color: #E6B800;
   padding: 10px;
   border-radius:10px;
   box-shadow: 2px 2px 5px #888888;
@@ -188,23 +189,12 @@ a:hover {
   float: right;
   width: 32.63888888888889%;
   height: 84%;
-  background-color: #ddd;
+  background-color: #E6B800;
   padding: 10px;
   border-radius:10px;
   box-shadow: 2px 2px 5px #888888;
 }
 /* SIDEBAR ENDS HERE */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
