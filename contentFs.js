@@ -1,3 +1,5 @@
+"use strict"
+
 let session = {};
 session.title = ‘Title’;
 session.description = "<p> What I want to do</p>";
