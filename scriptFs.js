@@ -1,19 +1,19 @@
 let tasks = session.tasks;
 
-let createResources = (resources, insertionPoint) => {
-  let resourceTemplate = document.querySelector('template#resource');
-  [].forEach.call(resources, (resource) => {
+let createResources = function(resources, insertionPoint) {
+  let resourceTemplate = document.querySelector('#resource');
+  [].forEach.call(function resources(resource) {
     let newResource = document.importNode(resourceTemplate.content, true);
     newResource.querySelector('.resource a').href = resource.link;
     newResource.querySelector('.resource a').textContent = resource.description;
 
     insertionPoint.appendChild(newResource);
   });
-}
+};
 
-let createTasks = (tasks, insertionPoint) => {
-  let taskTemplate = document.querySelector('template#task');
-  [].forEach.call(tasks, (task) => {
+let createTasks = function(tasks, insertionPoint){
+  let taskTemplate = document.querySelector('#task');
+  [].forEach.call(function tasks(task) {
     let newTask = document.importNode(taskTemplate.content, true);
     let resourcesInsertionPoint = newTask.querySelector('.resources');
   
@@ -30,9 +30,9 @@ let newSession = document.importNode(sessionTemplate.content, true);
 
 newSession.querySelector('.title').textContent = session.title;
 newSession.querySelector('.description').innerHTML = session.description;
-    
 
 let tasksInsertionPoint = newSession.querySelector('.tasks');
-createTasks(tasks, tasksInsertionPoint);
 
 document.querySelector('.session').appendChild(newSession);
+
+
