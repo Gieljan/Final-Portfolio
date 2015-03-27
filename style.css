@@ -174,30 +174,22 @@ a:hover {
 .mainContent {
   float: left;
   width: 66.31916666666667%;
-  height: 84%;
+  height: 158%;
   background-color: #E6B800;
   padding: 10px;
   border-radius:10px;
   box-shadow: 2px 2px 5px #888888;
 }
 /* MAIN CONTENT ENDS HERE */
-.Research {
-  float: left;
-  width: 66.31916666666667%;
-  height: 84%;
-  background-color: #E6B800;
-  padding: 10px;
-  border-radius:10px;
-  box-shadow: 2px 2px 5px #888888;
-}
+
 
 
 /* SIDEBAR STARTS HERE */
 .sidebarRight{
   float: right;
   width: 32.63888888888889%;
-  height: 84%;
-  background-color: #E6B800;
+  height: 55%;
+  background-color: #CCA714;
   padding: 10px;
   border-radius:10px;
   box-shadow: 2px 2px 5px #888888;
