@@ -8,7 +8,7 @@ function Tetris() {
     this.area = null;
 
     this.unit  = 20; // unit = x pixels
-    this.areaX = 20; // area width = x units
+    this.areaX = 25; // area width = x units
     this.areaY = 20; // area height = y units
 
     this.highscores = new Highscores(10);
@@ -213,7 +213,7 @@ function Tetris() {
     function Keyboard() {
 
         this.up = 38;
-        this.down = 40;
+        this.down = 37;
         this.left = 37;
         this.right = 38;
         this.n = 78;
@@ -307,11 +307,11 @@ function Tetris() {
          */
         this.reset = function() {
             this.stop();
-            this.level = 1;
+            this.level = 9;
             this.time  = 0;
             this.apm   = 0;
             this.lines = 0;
-            this.score = 5;
+            this.score = -5000;
             this.puzzles = 0;
             this.actions = 0;
             this.el.level.innerHTML = this.level;
@@ -591,24 +591,24 @@ function Tetris() {
         // width & height must be the same
         this.puzzles = [
             [
-                [0,0,1],
-                [1,1,0],
-                [1,0,1]
+                [0,0,1,1,1],
+                [1,1,0,1,1],
+                [1,0,1,1,1]
             ],
             [
-                [1,0,0],
-                [0,1,1],
-                [0,0,1]
+                [1,0,0,0,1],
+                [0,1,0,0,1],
+                [0,0,1,1,1]
             ],
             [
-                [0,1,1],
-                [1,1,1],
-                [0,0,0]
+                [0,1,1,0,0,1,0],
+                [1,1,1,1,0,1,1],
+                [0,0,0,0,0,0,1]
             ],
             [
-                [1,1,0],
-                [0,1,1],
-                [1,0,0]
+                [1,1,0,0,1,0,1],
+                [0,1,0,0,0,0,1],
+                [1,0,0,1,0,1,0]
             ],
             [
                 [1,1,0,0,1,0],
