@@ -642,7 +642,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 90 + (700 / this.tetris.stats.getLevel());
+            this.speed = 130 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
@@ -841,7 +841,7 @@ function Tetris() {
                     var lines = self.area.removeFullLines();
                     if (lines) {
                         self.tetris.stats.setLines(self.tetris.stats.getLines() + lines);
-                        self.tetris.stats.setScore(self.tetris.stats.getScore() + (900 * self.tetris.stats.getLevel() * lines));
+                        self.tetris.stats.setScore(self.tetris.stats.getScore() + (1000 * self.tetris.stats.getLevel() * lines));
                     }
                     // reset puzzle
                     self.reset();
@@ -866,7 +866,7 @@ function Tetris() {
             if (!self.isRunning() && !self.isStopped()) {
                 if (self.mayMoveDown()) {
                     // stats: score, actions
-                    self.tetris.stats.setScore(self.tetris.stats.getScore() + -2 + self.tetris.stats.getLevel());
+                    self.tetris.stats.setScore(self.tetris.stats.getScore() + 6 + self.tetris.stats.getLevel());
                     self.tetris.stats.setActions(self.tetris.stats.getActions() + 1);
                     self.moveDown();
                     self.forceMoveDownID = setTimeout(self.forceMoveDown, 30);
