@@ -779,7 +779,129 @@ function Tetris() {
     function random(i) {
         return Math.floor(Math.random() * i);
     }
+/**
+     * Store highscores in cookie.
+     */
+    function Highscores(maxscores) {
+        this.maxscores = maxscores;
+        this.scores = [];
 
+        /**
+         * Load scores from cookie.
+         * Note: it is automatically called when creating new instance of object Highscores.
+         * @return void
+         * @access public
+         */
+        this.load = function() {
+            var cookie = new Cookie();
+            var s = cookie.get("tetris-highscores");
+            this.scores = [];
+            if (s.length) {
+                var scores = s.split("|");
+                for (var i = 0; i < scores.length; ++i) {
+                    var a = scores[i].split(":");
+                    this.scores.push(new Score(a[0], Number(a[1])));
+                }
+            }
+        }
+
+        /**
+         * Save scores to cookie.
+         * Note: it is automatically called after adding new score.
+         * @return void
+         * @access public
+         */
+        this.save = function() {
+            var cookie = new Cookie();
+            var a = [];
+            for (var i = 0; i < this.scores.length; ++i) {
+                a.push(this.scores[i].name+":"+this.scores[i].score);
+            }
+            var s = a.join("|");
+            cookie.set("tetris-highscores", s, 3600*24*1000);
+        }
+
+        /**
+         * Is the score high enough to be able to add ?
+         * @return bool
+         * @access public
+         */
+        this.mayAdd = function(score) {
+            if (this.scores.length < this.maxscores) { return true; }
+            for (var i = this.scores.length - 1; i >= 0; --i) {
+                if (this.scores[i].score < score) { return true; }
+            }
+            return false;
+        }
+
+        /**
+         * @param string name
+         * @param int score
+         * @return void
+         * @access public
+         */
+        this.add = function(name, score) {
+            name = name.replace(/[;=:|]/g, "?");
+            name = name.replace(/</g, "<").replace(/>/g, ">");
+            if (this.scores.length < this.maxscores) {
+                this.scores.push(new Score(name, score));
+            } else {
+                for (var i = this.scores.length - 1; i >= 0; --i) {
+                    if (this.scores[i].score < score) {
+                        this.scores.removeByIndex(i);
+                        this.scores.push(new Score(name, score));
+                        break;
+                    }
+                }
+            }
+            this.sort();
+            this.save();
+        }
+
+        /**
+         * Get array of scores.
+         * @return array [Score, Score, ..]
+         * @access public
+         */
+        this.getScores = function() {
+            return this.scores;
+        }
+
+        /**
+         * All highscores returned in html friendly format.
+         * @return string
+         * @access public
+         */
+        this.toHtml = function() {
+            var s = '<table cellspacing="0" cellpadding="2"><tr><th></th><th>Name</th><th>Score</th></tr>';
+            for (var i = 0; i < this.scores.length; ++i) {
+                s += '<tr><td>?.</td><td>?</td><td>?</td></tr>'.format(i+1, this.scores[i].name, this.scores[i].score);
+            }
+            s += '</table>';
+            return s;
+        }
+
+        /**
+         * Sort table with scores.
+         * @return void
+         * @access private
+         */
+        this.sort = function() {
+            var scores = this.scores;
+            var len = scores.length;
+            this.scores = [];
+            for (var i = 0; i < len; ++i) {
+                var el = null, index = null;
+                for (var j = 0; j < scores.length; ++j) {
+                    if (!el || (scores[j].score > el.score)) {
+                        el = scores[j];
+                        index = j;
+                    }
+                }
+                scores.removeByIndex(index);
+                this.scores.push(el);
+            }
+        }
 
         /* Simple score object. */
         function Score(name, score) {
@@ -790,7 +912,63 @@ function Tetris() {
         this.load();
     }
 
-   
+    /**
+     * Managing cookies.
+     */
+    function Cookie() {
+
+        /**
+         * @param string name
+         * @return string
+         * @access public
+         */
+        this.get = function(name) {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; ++i) {
+                var a = cookies[i].split("=");
+                if (a.length == 2) {
+                    a[0] = a[0].trim();
+                    a[1] = a[1].trim();
+                    if (a[0] == name) {
+                        return unescape(a[1]);
+                    }
+                }
+            }
+            return "";
+        };
+
+        /**
+         * @param string name
+         * @param string value (do not use special chars like ";" "=")
+         * @param int seconds
+         * @param string path
+         * @param string domain
+         * @param bool secure
+         * @return void
+         * @access public
+         */
+        this.set = function(name, value, seconds, path, domain, secure) {
+            var cookie = (name + "=" + escape(value));
+            if (seconds) {
+                var date = new Date(new Date().getTime()+seconds*2100);
+                cookie += ("; expires="+date.toGMTString());
+            }
+            cookie += (path    ? "; path="+path : "");
+            cookie += (domain  ? "; domain="+domain : "");
+            cookie += (secure  ? "; secure" : "");
+            document.cookie = cookie;
+        };
+
+        /**
+         * @param name
+         * @return void
+         * @access public
+         */
+        this.del = function(name) {
+            document.cookie = name + "=; expires=Thu, 01-Jan-70 00:00:01 GMT";
+        };
+    }
+}
 
 if (!String.prototype.trim) {
     String.prototype.trim = function() {
