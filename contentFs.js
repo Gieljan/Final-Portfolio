@@ -6,8 +6,8 @@ session.description = "<p> What I want to do</p>";
 
 
 let task1 = {};
-task1.title = ’Task 1 ';
-task1.description = "<p>No actual coding in class but a quick breakdown of simple programs – have a look classically on how they look. A look at games a look at website, what does what?</p>"; 
+task1.title = 'Task 1 ';
+task1.description = '<p>No actual coding in class but a quick breakdown of simple programs – have a look classically on how they look. A look at games a look at website, what does what?</p>'; 
 
 task1.resources = [
  { 
