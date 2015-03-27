@@ -6,16 +6,12 @@ function Tetris() {
     this.puzzle = null;
     this.area = null;
 
-    this.unit  = 20; // unit = x pixels
-    this.areaX = 20; // area width = x units
-    this.areaY = 20; // area height = y units
+    this.unit  = 20; 
+    this.areaX = 20; 
+    this.areaY = 20; 
 
     this.highscores = new Highscores(10);
 
-    /**
-     * @return void
-     * @access public event
-     */
     this.start = function() {
         self.reset();
         self.stats.start();
@@ -29,10 +25,6 @@ function Tetris() {
         }
     }
 
-    /**
-     * @return void
-     * @access public event
-     */
     this.reset = function() {
         if (self.puzzle) {
             self.puzzle.destroy();
@@ -47,12 +39,7 @@ function Tetris() {
         self.stats.reset();
     }
 
-    /**
-     * End game.
-     * Stop stats, ...
-     * @return void
-     * @access public event
-     */
+
     this.gameOver = function() {
         self.stats.stop();
         self.puzzle.stop();
@@ -66,10 +53,7 @@ function Tetris() {
         }
     }
 
-    /**
-     * @return void
-     * @access public event
-     */
+
     this.up = function() {
         if (self.puzzle && self.puzzle.isRunning() && !self.puzzle.isStopped()) {
             if (self.puzzle.mayRotate()) {
@@ -79,10 +63,7 @@ function Tetris() {
         }
     }
 
-    /**
-     * @return void
-     * @access public event
-     */
+
     this.down = function() {
         if (self.puzzle && self.puzzle.isRunning() && !self.puzzle.isStopped()) {
             if (self.puzzle.mayMoveDown()) {
@@ -93,10 +74,7 @@ function Tetris() {
         }
     }
 
-    /**
-     * @return void
-     * @access public event
-     */
+
     this.left = function() {
         if (self.puzzle && self.puzzle.isRunning() && !self.puzzle.isStopped()) {
             if (self.puzzle.mayMoveLeft()) {
@@ -106,10 +84,7 @@ function Tetris() {
         }
     }
 
-    /**
-     * @return void
-     * @access public event
-     */
+
     this.right = function() {
         if (self.puzzle && self.puzzle.isRunning() && !self.puzzle.isStopped()) {
             if (self.puzzle.mayMoveRight()) {
@@ -119,10 +94,7 @@ function Tetris() {
         }
     }
 
-    /**
-     * @return void
-     * @access public event
-     */
+
     this.space = function() {
         if (self.puzzle && self.puzzle.isRunning() && !self.puzzle.isStopped()) {
             self.puzzle.stop();
@@ -130,19 +102,19 @@ function Tetris() {
         }
     }
 
-    // windows
+ 
     var helpwindow = new Window("tetris-help");
     var highscores = new Window("tetris-highscores");
 
-    // game menu
+
     document.getElementById("tetris-menu-start").onclick = function() { helpwindow.close(); highscores.close(); self.start(); this.blur(); }
     document.getElementById("tetris-menu-reset").onclick = function() { helpwindow.close(); highscores.close(); self.reset(); this.blur(); }
 
-    // help
+
     document.getElementById("tetris-menu-help").onclick = function() { highscores.close(); helpwindow.activate(); this.blur(); }
     document.getElementById("tetris-help-close").onclick = helpwindow.close;
 
-    // highscores
+
     document.getElementById("tetris-menu-highscores").onclick = function() {
         helpwindow.close();
         document.getElementById("tetris-highscores-content").innerHTML = self.highscores.toHtml();
@@ -151,13 +123,13 @@ function Tetris() {
     }
     document.getElementById("tetris-highscores-close").onclick = highscores.close;
 
-    // keyboard - buttons
+
     document.getElementById("tetris-keyboard-up").onclick = function() { self.up(); this.blur(); }
     document.getElementById("tetris-keyboard-down").onclick = function() { self.down(); this.blur(); }
     document.getElementById("tetris-keyboard-left").onclick = function () { self.left(); this.blur(); }
     document.getElementById("tetris-keyboard-right").onclick = function() { self.right(); this.blur(); }
 
-    // keyboard
+
     var keyboard = new Keyboard();
     keyboard.set(keyboard.n, this.start);
     keyboard.set(keyboard.r, this.reset);
@@ -168,47 +140,29 @@ function Tetris() {
     keyboard.set(keyboard.space, this.space);
     document.onkeydown = keyboard.event;
 
-    /**
-     * Window replaces game area, for example help window
-     * @param string id
-     */
+
     function Window(id) {
 
         this.id = id;
         this.el = document.getElementById(this.id);
         var self = this;
 
-        /**
-         * Activate or deactivate a window - update html
-         * @return void
-         * @access event
-         */
+
         this.activate = function() {
             self.el.style.display = (self.el.style.display == "block" ? "none" : "block");
         }
 
-        /**
-         * Close window - update html
-         * @return void
-         * @access event
-         */
+
         this.close = function() {
             self.el.style.display = "none";
         }
 
-        /**
-         * @return bool
-         * @access public
-         */
         this.isActive = function() {
             return (self.el.style.display == "block");
         }
     }
 
-    /**
-     * Assigning functions to keyboard events
-     * When key is pressed, searching in a table if any function has been assigned to this key, execute the function.
-     */
+
     function Keyboard() {
 
         this.up = 38;
@@ -226,22 +180,13 @@ function Tetris() {
 
         var self = this;
 
-        /**
-         * @param int key
-         * @param function func
-         * @return void
-         * @access public
-         */
+
         this.set = function(key, func) {
             this.keys.push(key);
             this.funcs.push(func);
         }
 
-        /**
-         * @param object e
-         * @return void
-         * @access event
-         */
+
         this.event = function(e) {
             if (!e) { e = window.event; }
             for (var i = 0; i < self.keys.length; i++) {
@@ -252,10 +197,7 @@ function Tetris() {
         }
     }
 
-    /**
-     * Live game statistics
-     * Updating html
-     */
+
     function Stats() {
 
         this.level;
@@ -263,7 +205,7 @@ function Tetris() {
         this.apm;
         this.lines;
         this.score;
-        this.puzzles; // number of puzzles created on current level
+        this.puzzles;
 
         this.actions;
 
@@ -278,36 +220,23 @@ function Tetris() {
         this.timerId = null;
         var self = this;
 
-        /**
-         * Start counting statistics, reset stats, turn on the timer
-         * @return void
-         * @access public
-         */
+
         this.start = function() {
             this.reset();
             this.timerId = setInterval(this.incTime, 1000);
         }
 
-        /**
-         * Stop counting statistics, turn off the timer
-         * @return void
-         * @access public
-         */
         this.stop = function() {
             if (this.timerId) {
                 clearInterval(this.timerId);
             }
         }
 
-        /**
-         * Reset statistics - update html
-         * @return void
-         * @access public
-         */
+ 
         this.reset = function() {
             this.stop();
             this.level = 1;
-            this.time  = 0;
+            this.time  = 932;
             this.apm   = 0;
             this.lines = 0;
             this.score = -5000;
@@ -320,120 +249,69 @@ function Tetris() {
             this.el.score.innerHTML = this.score;
         }
 
-        /**
-         * Increase time, update apm - update html
-         * This func is called by setInterval()
-         * @return void
-         * @access public event
-         */
+
         this.incTime = function() {
             self.time++;
             self.el.time.innerHTML = self.time;
-            self.apm = parseInt((self.actions / self.time) * 90);
+            self.apm = parseInt((self.actions / self.time) * 150);
             self.el.apm.innerHTML = self.apm;
         }
 
-        /**
-         * Set score - update html
-         * @param int i
-         * @return void
-         * @access public
-         */
+   
         this.setScore = function(i) {
             this.score = i;
             this.el.score.innerHTML = this.score;
         }
 
-        /**
-         * Set level - update html
-         * @param int i
-         * @return void
-         * @access public
-         */
+
         this.setLevel = function(i) {
             this.level = i;
             this.el.level.innerHTML = this.level;
         }
 
-        /**
-         * Set lines - update html
-         * @param int i
-         * @return void
-         * @access public
-         */
+
         this.setLines = function(i) {
             this.lines = i;
             this.el.lines.innerHTML = this.lines;
         }
 
-        /**
-         * Number of puzzles created on current level
-         * @param int i
-         * @return void
-         * @access public
-         */
+ 
         this.setPuzzles = function(i) {
             this.puzzles = i;
         }
 
-        /**
-         * @param int i
-         * @return void
-         * @access public
-         */
+
         this.setActions = function(i) {
             this.actions = i;
         }
 
-        /**
-         * @return int
-         * @access public
-         */
+
         this.getScore = function() {
             return this.score;
         }
 
-        /**
-         * @return int
-         * @access public
-         */
+   
         this.getLevel = function() {
             return this.level;
         }
 
-        /**
-         * @return int
-         * @access public
-         */
+
         this.getLines = function() {
             return this.lines;
         }
 
-        /**
-         * Number of puzzles created on current level
-         * @return int
-         * @access public
-         */
+ 
         this.getPuzzles = function() {
             return this.puzzles;
         }
 
-        /**
-         * @return int
-         * @access public
-         */
+
         this.getActions = function() {
             return this.actions;
         }
     }
 
-    /**
-     * Area consists of blocks (2 dimensional board).
-     * Block contains "0" (if empty) or Html Object.
-     * @param int x
-     * @param int y
-     * @param string id
-     */
+
     function Area(unit, x, y, id) {
 
         this.unit = unit;
@@ -443,7 +321,6 @@ function Tetris() {
 
         this.board = [];
 
-        // create 2-dimensional board
         for (var y = 0; y < this.y; y++) {
             this.board.push(new Array());
             for (var x = 0; x < this.x; x++) {
@@ -451,11 +328,7 @@ function Tetris() {
             }
         }
 
-        /**
-         * Removing html elements from area.
-         * @return void
-         * @access public
-         */
+
         this.destroy = function() {
             for (var y = 0; y < this.board.length; y++) {
                 for (var x = 0; x < this.board[y].length; x++) {
@@ -467,14 +340,7 @@ function Tetris() {
             }
         }
 
-        /**
-         * Searching for full lines.
-         * Must go from the bottom of area to the top.
-         * Returns the number of lines removed - needed for Stats.score.
-         * @see isLineFull() removeLine()
-         * @return void
-         * @access public
-         */
+
         this.removeFullLines = function() {
             var lines = 0;
             for (var y = this.y - 1; y > 0; y--) {
@@ -487,11 +353,7 @@ function Tetris() {
             return lines;
         }
 
-        /**
-         * @param int y
-         * @return bool
-         * @access public
-         */
+   
         this.isLineFull = function(y) {
             for (var x = 0; x < this.x; x++) {
                 if (!this.board[y][x]) { return false; }
@@ -499,14 +361,7 @@ function Tetris() {
             return true;
         }
 
-        /**
-         * Remove given line
-         * Remove html objects
-         * All lines that are above given line move down by 1 unit
-         * @param int y
-         * @return void
-         * @access public
-         */
+
         this.removeLine = function(y) {
             for (var x = 0; x < this.x; x++) {
                 this.el.removeChild(this.board[y][x]);
@@ -525,12 +380,7 @@ function Tetris() {
             }
         }
 
-        /**
-         * @param int y
-         * @param int x
-         * @return mixed 0 or Html Object
-         * @access public
-         */
+
         this.getBlock = function(y, x) {
             if (y < 0) { return 0; }
             if (y < this.y && x < this.x) {
@@ -540,28 +390,18 @@ function Tetris() {
             }
         }
 
-        /**
-         * Add Html Element to the area.
-         * Find (x,y) position using offsetTop and offsetLeft
-         * @param object el
-         * @return void
-         * @access public
-         */
+   
         this.addElement = function(el) {
             var x = parseInt(el.offsetLeft / this.unit);
             var y = parseInt(el.offsetTop / this.unit);
             if (y >= 0 && y < this.y && x >= 0 && x < this.x) {
                 this.board[y][x] = el;
             } else {
-                // not always an error ..
             }
         }
     }
 
-    /**
-     * Puzzle consists of blocks.
-     * Each puzzle after rotating 4 times, returns to its primitive position.
-     */
+
     function Puzzle(tetris, area) {
 
         var self = this;
@@ -572,22 +412,20 @@ function Tetris() {
         this.fallDownID = null;
         this.forceMoveDownID = null;
 
-        this.type = null; // 0..6
-        this.nextType = null; // next puzzle
-        this.position = null; // 0..3
+        this.type = null; 
+        this.nextType = null; 
+        this.position = null; 
         this.speed = null;
         this.running = null;
         this.stopped = null;
 
-        this.board = []; // filled with html elements after placing on area
+        this.board = []; 
         this.elements = [];
-        this.nextElements = []; // next board elements
+        this.nextElements = []; 
 
-        // (x,y) position of the puzzle (top-left)
         this.x = null;
         this.y = null;
 
-        // width & height must be the same
         this.puzzles = [
             [
                 [0,0,1],
@@ -626,11 +464,7 @@ function Tetris() {
             ]
         ];
 
-        /**
-         * Reset puzzle. It does not destroy html elements in this.board.
-         * @return void
-         * @access public
-         */
+
         this.reset = function() {
             if (this.fallDownID) {
                 clearTimeout(this.fallDownID);
@@ -641,7 +475,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 130 + (700 / this.tetris.stats.getLevel());
+            this.speed = 100 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
@@ -657,52 +491,27 @@ function Tetris() {
         this.nextType = random(this.puzzles.length);
         this.reset();
 
-        /**
-         * Check whether puzzle is running.
-         * @return bool
-         * @access public
-         */
+
         this.isRunning = function() {
             return this.running;
         }
 
-        /**
-         * Check whether puzzle has been stopped by user. It happens when user clicks
-         * "down" when puzzle is already at the bottom of area. The puzzle may still
-         * be running with event fallDown(). When puzzle is stopped, no actions will be
-         * performed when user press a key.
-         * @return bool
-         * @access public
-         */
+   
         this.isStopped = function() {
             return this.stopped;
         }
 
-        /**
-         * Get X position of puzzle (top-left)
-         * @return int
-         * @access public
-         */
+    
         this.getX = function() {
             return this.x;
         }
 
-        /**
-         * Get Y position of puzzle (top-left)
-         * @return int
-         * @access public
-         */
+     
         this.getY = function() {
             return this.y;
         }
 
-        /**
-         * Check whether new puzzle may be placed on the area.
-         * Find (x,y) in area where beginning of the puzzle will be placed.
-         * Check if first puzzle line (checking from the bottom) can be placed on the area.
-         * @return bool
-         * @access public
-         */
+
         this.mayPlace = function() {
             var puzzle = this.puzzles[this.type];
             var areaStartX = parseInt((this.area.x - puzzle[0].length) / 2);
@@ -726,14 +535,9 @@ function Tetris() {
             return true;
         }
 
-        /**
-         * Create empty board, create blocks in area - html objects, update puzzle board.
-         * Check puzzles on current level, increase level if needed.
-         * @return void
-         * @access public
-         */
+
         this.place = function() {
-            // stats
+
             this.tetris.stats.setPuzzles(this.tetris.stats.getPuzzles() + 1);
             if (this.tetris.stats.getPuzzles() >= (10 + this.tetris.stats.getLevel() * 2)) {
 			    this.tetris.stats.setLevel(this.tetris.stats.getLevel() + 1);
@@ -802,12 +606,7 @@ function Tetris() {
             this.reset();
         }
 
-        /**
-         * @param int y
-         * @param int x
-         * @return array
-         * @access private
-         */
+
         this.createEmptyPuzzle = function(y, x) {
             var puzzle = [];
             for (var y2 = 0; y2 < y; y2++) {
@@ -819,30 +618,21 @@ function Tetris() {
             return puzzle;
         }
 
-        /**
-         * Puzzle fall from the top to the bottom.
-         * After placing a puzzle, this event will be called as long as the puzzle is running.
-         * @see place() stop()
-         * @return void
-         * @access event
-         */
+
         this.fallDown = function() {
             if (self.isRunning()) {
                 if (self.mayMoveDown()) {
                     self.moveDown();
                     self.fallDownID = setTimeout(self.fallDown, self.speed);
                 } else {
-                    // move blocks into area board
                     for (var i = 0; i < self.elements.length; i++) {
                         self.area.addElement(self.elements[i]);
                     }
-                    // stats
                     var lines = self.area.removeFullLines();
                     if (lines) {
                         self.tetris.stats.setLines(self.tetris.stats.getLines() + lines);
                         self.tetris.stats.setScore(self.tetris.stats.getScore() + (1000 * self.tetris.stats.getLevel() * lines));
                     }
-                    // reset puzzle
                     self.reset();
                     if (self.mayPlace()) {
                         self.place();
@@ -853,34 +643,23 @@ function Tetris() {
             }
         }
 
-        /**
-         * After clicking "space" the puzzle is forced to move down, no user action is performed after
-         * this event is called. this.running must be set to false. This func is similiar to fallDown()
-         * Also update score & actions - like Tetris.down()
-         * @see fallDown()
-         * @return void
-         * @access public event
-         */
+   
         this.forceMoveDown = function() {
             if (!self.isRunning() && !self.isStopped()) {
                 if (self.mayMoveDown()) {
-                    // stats: score, actions
                     self.tetris.stats.setScore(self.tetris.stats.getScore() + -2 + self.tetris.stats.getLevel());
                     self.tetris.stats.setActions(self.tetris.stats.getActions() + 1);
                     self.moveDown();
                     self.forceMoveDownID = setTimeout(self.forceMoveDown, 30);
                 } else {
-                    // move blocks into area board
                     for (var i = 0; i < self.elements.length; i++) {
                         self.area.addElement(self.elements[i]);
                     }
-                    // stats: lines
                     var lines = self.area.removeFullLines();
                     if (lines) {
                         self.tetris.stats.setLines(self.tetris.stats.getLines() + lines);
                         self.tetris.stats.setScore(self.tetris.stats.getScore() + (1000 * self.tetris.stats.getLevel() * lines));
                     }
-                    // reset puzzle
                     self.reset();
                     if (self.mayPlace()) {
                         self.place();
@@ -891,21 +670,12 @@ function Tetris() {
             }
         }
 
-        /**
-         * Stop the puzzle falling
-         * @return void
-         * @access public
-         */
+
         this.stop = function() {
             this.running = false;
         }
 
-        /**
-         * Check whether puzzle may be rotated.
-         * Check down, left, right, rotate
-         * @return bool
-         * @access public
-         */
+
         this.mayRotate = function() {
             for (var y = 0; y < this.board.length; y++) {
                 for (var x = 0; x < this.board[y].length; x++) {
@@ -922,11 +692,7 @@ function Tetris() {
             return true;
         }
 
-        /**
-         * Rotate the puzzle to the left.
-         * @return void
-         * @access public
-         */
+
         this.rotate = function() {
             var puzzle = this.createEmptyPuzzle(this.board.length, this.board[0].length);
             for (var y = 0; y < this.board.length; y++) {
@@ -946,15 +712,7 @@ function Tetris() {
             this.board = puzzle;
         }
 
-        /**
-         * Check whether puzzle may be moved down.
-         * - is any other puzzle on the way ?
-         * - is it end of the area ?
-         * If false, then true is assigned to variable this.stopped - no user actions will be performed to this puzzle,
-         * so this func should be used carefully, only in Tetris.down() and Tetris.puzzle.fallDown()
-         * @return bool
-         * @access public
-         */
+
         this.mayMoveDown = function() {
             for (var y = 0; y < this.board.length; y++) {
                 for (var x = 0; x < this.board[y].length; x++) {
@@ -967,11 +725,7 @@ function Tetris() {
             return true;
         }
 
-        /**
-         * Move the puzzle down by 1 unit.
-         * @return void
-         * @access public
-         */
+
         this.moveDown = function() {
             for (var i = 0; i < this.elements.length; i++) {
                 this.elements[i].style.top = this.elements[i].offsetTop + this.area.unit + "px";
@@ -979,13 +733,7 @@ function Tetris() {
             this.y++;
         }
 
-        /**
-         * Check whether puzzle may be moved left.
-         * - is any other puzzle on the way ?
-         * - is the end of the area
-         * @return bool
-         * @access public
-         */
+ 
         this.mayMoveLeft = function() {
             for (var y = 0; y < this.board.length; y++) {
                 for (var x = 0; x < this.board[y].length; x++) {
@@ -998,11 +746,7 @@ function Tetris() {
             return true;
         }
 
-        /**
-         * Move the puzzle left by 1 unit
-         * @return void
-         * @access public
-         */
+   
         this.moveLeft = function() {
             for (var i = 0; i < this.elements.length; i++) {
                 this.elements[i].style.left = this.elements[i].offsetLeft - this.area.unit + "px";
@@ -1010,13 +754,7 @@ function Tetris() {
             this.x--;
         }
 
-        /**
-         * Check whether puzle may be moved right.
-         * - is any other puzzle on the way ?
-         * - is the end of the area
-         * @return bool
-         * @access public
-         */
+
         this.mayMoveRight = function() {
             for (var y = 0; y < this.board.length; y++) {
                 for (var x = 0; x < this.board[y].length; x++) {
@@ -1029,11 +767,7 @@ function Tetris() {
             return true;
         }
 
-        /**
-         * Move the puzzle right by 1 unit.
-         * @return void
-         * @access public
-         */
+   
         this.moveRight = function() {
             for (var i = 0; i < this.elements.length; i++) {
                 this.elements[i].style.left = this.elements[i].offsetLeft + this.area.unit + "px";
@@ -1042,138 +776,10 @@ function Tetris() {
         }
     }
 
-    /**
-     * Generates random number that is >= 0 and < i
-     * @return int
-     * @access private
-     */
     function random(i) {
         return Math.floor(Math.random() * i);
     }
 
-    /**
-     * Store highscores in cookie.
-     */
-    function Highscores(maxscores) {
-        this.maxscores = maxscores;
-        this.scores = [];
-
-        /**
-         * Load scores from cookie.
-         * Note: it is automatically called when creating new instance of object Highscores.
-         * @return void
-         * @access public
-         */
-        this.load = function() {
-            var cookie = new Cookie();
-            var s = cookie.get("tetris-highscores");
-            this.scores = [];
-            if (s.length) {
-                var scores = s.split("|");
-                for (var i = 0; i < scores.length; ++i) {
-                    var a = scores[i].split(":");
-                    this.scores.push(new Score(a[0], Number(a[1])));
-                }
-            }
-        }
-
-        /**
-         * Save scores to cookie.
-         * Note: it is automatically called after adding new score.
-         * @return void
-         * @access public
-         */
-        this.save = function() {
-            var cookie = new Cookie();
-            var a = [];
-            for (var i = 0; i < this.scores.length; ++i) {
-                a.push(this.scores[i].name+":"+this.scores[i].score);
-            }
-            var s = a.join("|");
-            cookie.set("tetris-highscores", s, 3600*24*1000);
-        }
-
-        /**
-         * Is the score high enough to be able to add ?
-         * @return bool
-         * @access public
-         */
-        this.mayAdd = function(score) {
-            if (this.scores.length < this.maxscores) { return true; }
-            for (var i = this.scores.length - 1; i >= 0; --i) {
-                if (this.scores[i].score < score) { return true; }
-            }
-            return false;
-        }
-
-        /**
-         * @param string name
-         * @param int score
-         * @return void
-         * @access public
-         */
-        this.add = function(name, score) {
-            name = name.replace(/[;=:|]/g, "?");
-            name = name.replace(/</g, "<").replace(/>/g, ">");
-            if (this.scores.length < this.maxscores) {
-                this.scores.push(new Score(name, score));
-            } else {
-                for (var i = this.scores.length - 1; i >= 0; --i) {
-                    if (this.scores[i].score < score) {
-                        this.scores.removeByIndex(i);
-                        this.scores.push(new Score(name, score));
-                        break;
-                    }
-                }
-            }
-            this.sort();
-            this.save();
-        }
-
-        /**
-         * Get array of scores.
-         * @return array [Score, Score, ..]
-         * @access public
-         */
-        this.getScores = function() {
-            return this.scores;
-        }
-
-        /**
-         * All highscores returned in html friendly format.
-         * @return string
-         * @access public
-         */
-        this.toHtml = function() {
-            var s = '<table cellspacing="0" cellpadding="2"><tr><th></th><th>Name</th><th>Score</th></tr>';
-            for (var i = 0; i < this.scores.length; ++i) {
-                s += '<tr><td>?.</td><td>?</td><td>?</td></tr>'.format(i+1, this.scores[i].name, this.scores[i].score);
-            }
-            s += '</table>';
-            return s;
-        }
-
-        /**
-         * Sort table with scores.
-         * @return void
-         * @access private
-         */
-        this.sort = function() {
-            var scores = this.scores;
-            var len = scores.length;
-            this.scores = [];
-            for (var i = 0; i < len; ++i) {
-                var el = null, index = null;
-                for (var j = 0; j < scores.length; ++j) {
-                    if (!el || (scores[j].score > el.score)) {
-                        el = scores[j];
-                        index = j;
-                    }
-                }
-                scores.removeByIndex(index);
-                this.scores.push(el);
-            }
-        }
 
         /* Simple score object. */
         function Score(name, score) {
@@ -1184,63 +790,7 @@ function Tetris() {
         this.load();
     }
 
-    /**
-     * Managing cookies.
-     */
-    function Cookie() {
-
-        /**
-         * @param string name
-         * @return string
-         * @access public
-         */
-        this.get = function(name) {
-            var cookies = document.cookie.split(";");
-            for (var i = 0; i < cookies.length; ++i) {
-                var a = cookies[i].split("=");
-                if (a.length == 2) {
-                    a[0] = a[0].trim();
-                    a[1] = a[1].trim();
-                    if (a[0] == name) {
-                        return unescape(a[1]);
-                    }
-                }
-            }
-            return "";
-        };
-
-        /**
-         * @param string name
-         * @param string value (do not use special chars like ";" "=")
-         * @param int seconds
-         * @param string path
-         * @param string domain
-         * @param bool secure
-         * @return void
-         * @access public
-         */
-        this.set = function(name, value, seconds, path, domain, secure) {
-            var cookie = (name + "=" + escape(value));
-            if (seconds) {
-                var date = new Date(new Date().getTime()+seconds*2100);
-                cookie += ("; expires="+date.toGMTString());
-            }
-            cookie += (path    ? "; path="+path : "");
-            cookie += (domain  ? "; domain="+domain : "");
-            cookie += (secure  ? "; secure" : "");
-            document.cookie = cookie;
-        };
-
-        /**
-         * @param name
-         * @return void
-         * @access public
-         */
-        this.del = function(name) {
-            document.cookie = name + "=; expires=Thu, 01-Jan-70 00:00:01 GMT";
-        };
-    }
-}
+   
 
 if (!String.prototype.trim) {
     String.prototype.trim = function() {
