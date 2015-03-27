@@ -1,3 +1,5 @@
+"use strict";
+
 let tasks = session.tasks;
 
 let createResources = function(resources, insertionPoint) {
