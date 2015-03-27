@@ -4,7 +4,7 @@ body {
 }
 body, table {
     font: 11px Tahoma;
-    color: red;
+    color: Black;
 }
 
 /*** tetris 168,308 ***/
@@ -186,20 +186,20 @@ body, table {
 }
 #tetris .block0,
 #tetris .block1 {
-    background: #6699FF;
+    background: #00FF00;
 }
 #tetris .block2,
 #tetris .block3 {
-    background: #FF6600;
+    background: #FF0080;
 }
 #tetris .block4 {
-    background: #FFAC1C;
+    background: #FF0000;
 }
 #tetris .block5 {
-    background: #BAA68E;
+    background: #0040FF;
 }
 #tetris .block6 {
-    background: #FF0000;
+    background: #CC2EFA;
 }
 
 /*** window ***/
