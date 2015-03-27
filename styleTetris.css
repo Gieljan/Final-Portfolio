@@ -1,6 +1,6 @@
 html, body { height: 100%; margin: 0; padding: 0; }
 body {
-    background: grey;
+    background-image: url("http://media.giphy.com/media/l0O9x5D9MnFtiKbgA/giphy.gif");
 }
 body, table {
     font: 11px Tahoma;
@@ -11,7 +11,7 @@ body, table {
 
 #tetris {
     position: relative;
-    width: 300px;
+    width: 280px;
     height: 310px;
     border: 1px solid #BAA68E;
     background: white;
