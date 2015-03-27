@@ -841,7 +841,7 @@ function Tetris() {
                     var lines = self.area.removeFullLines();
                     if (lines) {
                         self.tetris.stats.setLines(self.tetris.stats.getLines() + lines);
-                        self.tetris.stats.setScore(self.tetris.stats.getScore() + (20 * self.tetris.stats.getLevel() * lines));
+                        self.tetris.stats.setScore(self.tetris.stats.getScore() + (900 * self.tetris.stats.getLevel() * lines));
                     }
                     // reset puzzle
                     self.reset();
