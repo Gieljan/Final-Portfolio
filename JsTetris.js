@@ -330,7 +330,7 @@ function Tetris() {
         this.incTime = function() {
             self.time++;
             self.el.time.innerHTML = self.time;
-            self.apm = parseInt((self.actions / self.time) * 60);
+            self.apm = parseInt((self.actions / self.time) * 90);
             self.el.apm.innerHTML = self.apm;
         }
 
@@ -642,7 +642,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 80 + (700 / this.tetris.stats.getLevel());
+            this.speed = 90 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
