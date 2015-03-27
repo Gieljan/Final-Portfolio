@@ -13,7 +13,7 @@ body, table {
     position: relative;
     width: 300px;
     height: 310px;
-    border: 1px solid #FFFF01;
+    border: 1px solid white;
     background: white;
     margin: 0 auto;
 }
@@ -181,7 +181,7 @@ body, table {
     position: absolute;
     width: 13px;
     height: 13px;
-    border: 0.5px solid #F71BFF;
+    border: 0.5px solid white;
 }
 #tetris .block0 {
     backrgound: #F71BFF;
@@ -189,7 +189,9 @@ body, table {
 #tetris .block1 {
     background: #FFFF01;
 }
-#tetris .block2,
+#tetris .block2 {
+    background: #FF0001;
+}
 #tetris .block3 {
     background: #FF0001;
 }
