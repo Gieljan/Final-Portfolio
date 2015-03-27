@@ -25,7 +25,6 @@ div {
 /* this styles the text inside the HEADER */
 .webTitle {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   font-size: 45px;
   margin: 0 auto;
   color: #000;
