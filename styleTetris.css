@@ -183,7 +183,9 @@ body, table {
     height: 13px;
     border: 0.5px solid #F71BFF;
 }
-#tetris .block0,
+#tetris .block0 {
+    backrgound: #F71BFF;
+}
 #tetris .block1 {
     background: #FFFF01;
 }
