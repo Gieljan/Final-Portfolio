@@ -212,7 +212,7 @@ function Tetris() {
      */
     function Keyboard() {
 
-        this.up = 36;
+        this.up = 38;
         this.down = 37;
         this.left = 37;
         this.right = 38;
@@ -642,7 +642,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 50 + (700 / this.tetris.stats.getLevel());
+            this.speed = 90 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
