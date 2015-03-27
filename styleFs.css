@@ -1,62 +1,37 @@
 h1 {
     text-align: center;
     font-size: 30px;
-    color: #F0FFFF;
     font-style: normal;
 }
 
 h2 {
     text-align: center; 
     font-size: 18px;
-    color: #F0FFFF;
     font-style: italic;
 }
 
 h3 {
     text-align: left; 
     font-size: 16px;
-    color: #504A4B;
     font-style: normal;
 }
 
 h4 {
     text-align: left; 
     font-size: 14px;
-    color: #504A4B;
     font-style: italic;
 }
 
 p {
     text-align: left;
-    font-family: arial;
-    color: #504A4B;
 }
 
-li{
-    list-style:square;
-    text-align: left;
-    font-size: 14px;
-    color: #504A4B;
-}
 
-img {
-    float: right;
-    border: 1px dotted white;
-    margin: 0px 0px 15px 20px;
-}
-
-blockquote {
-    font-style: italic;
-    font-size: 14px;
-    color: #F0FFFF;
-}
-
-a {
-  color: #2B547E;
-}
 
 body {
-    background-color: #B6B6B4;
+    background-color: #E6B800;
+    color: #2B2B25;
+    font-family: tahoma;
 }
 
 article {
