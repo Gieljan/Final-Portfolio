@@ -8,7 +8,7 @@ function Tetris() {
     this.area = null;
 
     this.unit  = 20; // unit = x pixels
-    this.areaX = 25; // area width = x units
+    this.areaX = 20; // area width = x units
     this.areaY = 20; // area height = y units
 
     this.highscores = new Highscores(10);
@@ -212,7 +212,7 @@ function Tetris() {
      */
     function Keyboard() {
 
-        this.up = 39;
+        this.up = 36;
         this.down = 37;
         this.left = 37;
         this.right = 38;
