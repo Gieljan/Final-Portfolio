@@ -29,9 +29,7 @@ description: “Link2"
 let task2 = {};
 task2.title = 'Task2';
 task2.description = `<p>"Theory about , discussion about the theory and how it relates back to coding – something that is mentioned as program.</p>'
-
 <p>Subsection</p > ;
-
 task2.resources = [{
   link: "http://www.google.com",
   description: “Link1”
@@ -39,13 +37,10 @@ task2.resources = [{
   link: "http://www.google.com",
   description: “link3""
 }, ];
-
-
 let task3 = {};
 task3.title = ‘Task3’;
 task3.description = ` < p > Think about how you should go about coding this> what do you need to specify. In groups in class come up with a plan to discuss which steps need to be taken and what code is necessary fort this – Where do you start and why?
  < /p>`;
-
 task3.resources = [
   {
     link: "http://www.google.com",
@@ -60,9 +55,5 @@ task3.resources = [
    description: “Link3”
  }
 ];
-
-
-
 session.tasks = [task1, task2, task3];
-
 console.log(session);
