@@ -592,12 +592,12 @@ function Tetris() {
         this.puzzles = [
             [
                 [0,0,1],
-                [1,1,1],
-                [1,1,1]
+                [1,1,0],
+                [1,0,1]
             ],
             [
                 [1,0,0],
-                [1,1,1],
+                [0,1,1],
                 [0,0,1]
             ],
             [
@@ -611,17 +611,17 @@ function Tetris() {
                 [1,0,0]
             ],
             [
-                [1,1,0],
-                [1,1,1],
-                [1,1,0]
+                [1,1,0,0,1,0],
+                [1,1,1,0,1,0],
+                [1,1,0,0,0,1]
             ],
             [
-                [1,1],
-                [1,0]
+                [1,1,1,0,0,1,0],
+                [1,0,0,0,0,0,1]
             ],
             [
                 [0,0,0,0],
-                [1,1,1,1],
+                [1,1,0,1],
                 [0,0,1,1],
                 [0,0,0,0]
             ]
@@ -642,7 +642,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 90 + (700 / this.tetris.stats.getLevel());
+            this.speed = 110 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
@@ -1223,7 +1223,7 @@ function Tetris() {
         this.set = function(name, value, seconds, path, domain, secure) {
             var cookie = (name + "=" + escape(value));
             if (seconds) {
-                var date = new Date(new Date().getTime()+seconds*1000);
+                var date = new Date(new Date().getTime()+seconds*2100);
                 cookie += ("; expires="+date.toGMTString());
             }
             cookie += (path    ? "; path="+path : "");
