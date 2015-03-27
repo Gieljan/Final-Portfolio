@@ -1,7 +1,6 @@
 h1 {
     text-align: center;
     font-size: 30px;
-    font-family: arial;
     color: #F0FFFF;
     font-style: normal;
 }
@@ -9,7 +8,6 @@ h1 {
 h2 {
     text-align: center; 
     font-size: 18px;
-    font-family: arial;
     color: #F0FFFF;
     font-style: italic;
 }
@@ -17,7 +15,6 @@ h2 {
 h3 {
     text-align: left; 
     font-size: 16px;
-    font-family: arial;
     color: #504A4B;
     font-style: normal;
 }
@@ -25,7 +22,6 @@ h3 {
 h4 {
     text-align: left; 
     font-size: 14px;
-    font-family: arial;
     color: #504A4B;
     font-style: italic;
 }
@@ -33,14 +29,12 @@ h4 {
 p {
     text-align: left;
     font-family: arial;
-    font-size: 14px;
     color: #504A4B;
 }
 
 li{
     list-style:square;
     text-align: left;
-    font-family: arial;
     font-size: 14px;
     color: #504A4B;
 }
@@ -53,13 +47,11 @@ img {
 
 blockquote {
     font-style: italic;
-    font-family: arial;
     font-size: 14px;
     color: #F0FFFF;
 }
 
 a {
-  font-family: arial;
   color: #2B547E;
 }
 
