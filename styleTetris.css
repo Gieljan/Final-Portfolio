@@ -7,18 +7,18 @@ body, table {
     color: #F71BFF;
 }
 
-/*** tetris 168,308 ***/
+
 
 #tetris {
     position: relative;
-    width: 260px;
+    width: 300px;
     height: 310px;
     border: 1px solid #F71BFF;
     background: white;
     margin: 0 auto;
 }
 
-/*** left ***/
+
 
 #tetris .left {
     background: #F5EDE3;
@@ -35,22 +35,22 @@ body, table {
     margin-bottom: 10px;
 }
 #tetris .left h1 a {
-    color: #3366CC;
+    color: #F71BFF;
     text-decoration: none;
 }
 #tetris .left h1 a:hover {
-    color: #FF6600;
+    color: #F71BFF;
     text-decoration: none;
 }
 
-/* menu */
+
 
 #tetris .left .menu {
     text-align: center;
 }
 #tetris .left input {
     font: 10px tahoma;
-    color: #333333;
+    color: #F71BFF;
     text-transform: uppercase;
     background: #EAE0D1;
 }
@@ -58,7 +58,7 @@ body, table {
     width: 90px;
 }
 
-/* keyboard */
+
 
 #tetris .left .keyboard {
     position: absolute;
@@ -115,7 +115,7 @@ body, table {
     height: 30px;
 }
 
-/* game over */
+
 
 #tetris-gameover {
     position: absolute;
@@ -190,7 +190,7 @@ body, table {
 }
 #tetris .block2,
 #tetris .block3 {
-    background: #FF0080;
+    background: #FF0001;
 }
 #tetris .block4 {
     background: #F71BFF;
@@ -217,7 +217,7 @@ body, table {
 #tetris .window .top {
     position: relative;
     background: #EAE0D1;
-    color: #666666;
+    color: #F71BFF;
     font: 10px tahoma;
     letter-spacing: +1px;
     height: 20px;
@@ -237,7 +237,7 @@ body, table {
     line-height: 19px;
     text-indent: 7px;
     width: 21px;
-    border-left: 1px solid #ffffff;
+    border-left: 1px solid #F71BFF;
     cursor: pointer;
 }
 #tetris .window .top .close:hover {
