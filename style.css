@@ -181,7 +181,15 @@ a:hover {
   box-shadow: 2px 2px 5px #888888;
 }
 /* MAIN CONTENT ENDS HERE */
-
+.Research {
+  float: left;
+  width: 66.31916666666667%;
+  height: 84%;
+  background-color: #E6B800;
+  padding: 10px;
+  border-radius:10px;
+  box-shadow: 2px 2px 5px #888888;
+}
 
 
 /* SIDEBAR STARTS HERE */
@@ -195,11 +203,4 @@ a:hover {
   box-shadow: 2px 2px 5px #888888;
 }
 /* SIDEBAR ENDS HERE */
-
-
-
-
-
-
-
 
