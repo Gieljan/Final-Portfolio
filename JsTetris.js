@@ -1223,7 +1223,7 @@ function Tetris() {
         this.set = function(name, value, seconds, path, domain, secure) {
             var cookie = (name + "=" + escape(value));
             if (seconds) {
-                var date = new Date(new Date().getTime()+seconds*2100);
+                var date = new Date(new Date().getTime()+seconds*1000);
                 cookie += ("; expires="+date.toGMTString());
             }
             cookie += (path    ? "; path="+path : "");
