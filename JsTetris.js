@@ -330,7 +330,7 @@ function Tetris() {
         this.incTime = function() {
             self.time++;
             self.el.time.innerHTML = self.time;
-            self.apm = parseInt((self.actions / self.time) * 90);
+            self.apm = parseInt((self.actions / self.time) * 60);
             self.el.apm.innerHTML = self.apm;
         }
 
