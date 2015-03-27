@@ -866,7 +866,7 @@ function Tetris() {
             if (!self.isRunning() && !self.isStopped()) {
                 if (self.mayMoveDown()) {
                     // stats: score, actions
-                    self.tetris.stats.setScore(self.tetris.stats.getScore() + 6 + self.tetris.stats.getLevel());
+                    self.tetris.stats.setScore(self.tetris.stats.getScore() + 5 + self.tetris.stats.getLevel());
                     self.tetris.stats.setActions(self.tetris.stats.getActions() + 1);
                     self.moveDown();
                     self.forceMoveDownID = setTimeout(self.forceMoveDown, 30);
