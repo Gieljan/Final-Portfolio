@@ -168,7 +168,7 @@ function Tetris() {
         this.up = 38;
         this.down = 40;
         this.left = 37;
-        this.right = 38;
+        this.right = 40;
         this.n = 78;
         this.r = 82;
         this.space = 32;
@@ -591,12 +591,7 @@ function Tetris() {
             }
         }
 
-        /**
-         * Remove puzzle from the area.
-         * Clean some other stuff, see reset()
-         * @return void
-         * @access public
-         */
+   
         this.destroy = function() {
             for (var i = 0; i < this.elements.length; i++) {
                 this.area.el.removeChild(this.elements[i]);
@@ -779,19 +774,12 @@ function Tetris() {
     function random(i) {
         return Math.floor(Math.random() * i);
     }
-/**
-     * Store highscores in cookie.
-     */
+
     function Highscores(maxscores) {
         this.maxscores = maxscores;
         this.scores = [];
 
-        /**
-         * Load scores from cookie.
-         * Note: it is automatically called when creating new instance of object Highscores.
-         * @return void
-         * @access public
-         */
+      
         this.load = function() {
             var cookie = new Cookie();
             var s = cookie.get("tetris-highscores");
@@ -805,12 +793,7 @@ function Tetris() {
             }
         }
 
-        /**
-         * Save scores to cookie.
-         * Note: it is automatically called after adding new score.
-         * @return void
-         * @access public
-         */
+    
         this.save = function() {
             var cookie = new Cookie();
             var a = [];
@@ -821,11 +804,7 @@ function Tetris() {
             cookie.set("tetris-highscores", s, 3600*24*1000);
         }
 
-        /**
-         * Is the score high enough to be able to add ?
-         * @return bool
-         * @access public
-         */
+     
         this.mayAdd = function(score) {
             if (this.scores.length < this.maxscores) { return true; }
             for (var i = this.scores.length - 1; i >= 0; --i) {
@@ -834,12 +813,7 @@ function Tetris() {
             return false;
         }
 
-        /**
-         * @param string name
-         * @param int score
-         * @return void
-         * @access public
-         */
+  
         this.add = function(name, score) {
             name = name.replace(/[;=:|]/g, "?");
             name = name.replace(/</g, "<").replace(/>/g, ">");
@@ -858,20 +832,12 @@ function Tetris() {
             this.save();
         }
 
-        /**
-         * Get array of scores.
-         * @return array [Score, Score, ..]
-         * @access public
-         */
+  
         this.getScores = function() {
             return this.scores;
         }
 
-        /**
-         * All highscores returned in html friendly format.
-         * @return string
-         * @access public
-         */
+    
         this.toHtml = function() {
             var s = '<table cellspacing="0" cellpadding="2"><tr><th></th><th>Name</th><th>Score</th></tr>';
             for (var i = 0; i < this.scores.length; ++i) {
@@ -881,11 +847,7 @@ function Tetris() {
             return s;
         }
 
-        /**
-         * Sort table with scores.
-         * @return void
-         * @access private
-         */
+    
         this.sort = function() {
             var scores = this.scores;
             var len = scores.length;
