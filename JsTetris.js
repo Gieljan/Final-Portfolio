@@ -310,7 +310,7 @@ function Tetris() {
             this.time  = 0;
             this.apm   = 0;
             this.lines = 0;
-            this.score = 5;
+            this.score = -5000;
             this.puzzles = 0;
             this.actions = 0;
             this.el.level.innerHTML = this.level;
@@ -595,23 +595,23 @@ function Tetris() {
                 [1,0,1]
             ],
             [
-                [1,0,0],
-                [0,1,1],
-                [0,0,1]
+                [1,0,0,0],
+                [0,1,0,1],
+                [0,0,1,1]
             ],
             [
-                [0,1,1],
-                [1,1,1],
-                [0,0,0]
+                [0,1,1,0,1],
+                [1,1,1,0,0],
+                [0,0,0,1,1]
             ],
             [
                 [1,1,0],
                 [0,1,1],
-                [1,0,0]
+                [1,1,1]
             ],
             [
                 [1,1,0,0,1,0],
-                [1,1,1,0,1,0],
+                [1,1,1,1,1,0],
                 [1,1,0,0,0,1]
             ],
             [
@@ -621,7 +621,7 @@ function Tetris() {
             [
                 [0,0,0,0],
                 [1,1,0,1],
-                [0,0,1,1],
+                [1,0,1,1],
                 [0,0,0,0]
             ]
         ];
@@ -641,7 +641,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 110 + (700 / this.tetris.stats.getLevel());
+            this.speed = 130 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
@@ -865,7 +865,7 @@ function Tetris() {
             if (!self.isRunning() && !self.isStopped()) {
                 if (self.mayMoveDown()) {
                     // stats: score, actions
-                    self.tetris.stats.setScore(self.tetris.stats.getScore() + 5 + self.tetris.stats.getLevel());
+                    self.tetris.stats.setScore(self.tetris.stats.getScore() + -2 + self.tetris.stats.getLevel());
                     self.tetris.stats.setActions(self.tetris.stats.getActions() + 1);
                     self.moveDown();
                     self.forceMoveDownID = setTimeout(self.forceMoveDown, 30);
