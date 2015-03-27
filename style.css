@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 * { box-sizing: border-box; -moz-box-sizing: border-box; }
 
@@ -12,7 +12,7 @@
 /* END MAIN WRAPPER */
 
 body {
-  font-family: 'Roboto', san serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #fff;
 }
 
@@ -24,6 +24,7 @@ div {
 
 /* this styles the text inside the HEADER */
 .webTitle {
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   font-size: 45px;
   margin: 0 auto;
