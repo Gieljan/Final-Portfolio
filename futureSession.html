@@ -1,15 +1,199 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-Hellu
-</body>
+  <body>
+    
+    <section>
+      
+      <center>
+        <img src="http://www.gew.de/Binaries/Binary39551/San_Jose_1958.jpg" width="100%" height="100%">
+      </center>
+      
+        <h1>The Perfect Class.</h1>
+        
+        <h2>'All I know I learned from Zelda.'</h2>
+        
+        <p>This week we will have a closer look at games. Our aim is to learn how to
+        create a simple Canvas HTML5 game. We will walk through a simple game 
+        practically line-by-line!</p>
+     
+    <hr/>
+      
+      <article>
+        
+        <p>The code we will be working with this week can be found <a href="http://plnkr.co/edit/0XMPmMPOW8EOLwTZvDFc?p=info">here in the game.js</a>.</p> 
+        
+        <p>Since you got access to this Plunkr already a couple of days in advance to the class, I expect you to familiarise 
+        yourself with the code as a preparation to class. The following will guide you through each step taken in the Plunk:</p>  
+            
+            <template id="gameSession">
+      
+             <section class="readable"> 
+                <h2 class="text"></h2>
+                  <h3 class="text"></h3>
+                    <h4 class="text"></h4>
+                      <p class="text"></p>
+              </section>  
+      
+            </template>
+            
+            <template id="tasks">
+              
+              <section class="readable">
+                  <h3 class="text"></h3>
+                    <h4 class="text"></h4>
+                      <p class="text"></p>
+              </section>
+            
+            </template>
+          
+          </article>
+    
+       </section>
+    
+    <!-- I've included the script in the html file as I had some big trouble 
+    putting it into the script.js and I still do not understand why.-->
+   
+    <script>
+      
+    
+      var gameSession = document.querySelector('#gameSession');
+      
+      var text = "✔ Step 1";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('h3').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "Create the Canvas";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('h4').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "The first thing we need to do is create a canvas element. Once we have the element, we get a reference to its context, which we use to issue drawing commands. Then we set its dimensions, and add it to document so it will appear in the page.";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('p').textContent = text;
+      document.body.appendChild(clone);
 
+      
+      // I repeat this for each step taken in the code of the game:
+     
+      var text = "✔ Step 2";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('h3').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "Define Object";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('h4').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "The next thing we need to do is to define the object, that we are playing with. This includes the starting position, the shape, color and speed of the object.";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('p').textContent = text;
+      document.body.appendChild(clone);
+     
+      var text = "✔ Step 3";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('h3').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "Define Functions";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('h4').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "We need 3 functions: Update, Render and Run. The update function is going to be used to check if arrow keys are being pressed, and updates the object's x and y coordinates appropriately. The render function is where the drawing code will go. The run function will call an update and render functions and calculate the “mod” parameter of the update function.";
+      var clone = document.importNode(gameSession.content, true);
+      clone.querySelector('p').textContent = text;
+      document.body.appendChild(clone);
+      
+    </script>
+    
+    <hr/>
+    
+  <h1>Tasks</h1>
+  
+  <script>
+    
+      var tasks = document.querySelector('#tasks');
+      
+      var text = "1) Analyse the Code";
+      var clone = document.importNode(tasks.content, true);
+      clone.querySelector('h3').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "Analyse the code properly in order to be able to sort the code according to each step.Doing so, create a new Plunkr with the same code, however, this time your write a description for each line. We really want to understand the code. Try around and see what happens, if you change variables or if you delete a line. ";
+      var clone = document.importNode(tasks.content, true);
+      clone.querySelector('p').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "2) Extend the Code";
+      var clone = document.importNode(tasks.content, true);
+      clone.querySelector('h3').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "Think of ways to extend the code. You don't have to code directly, just write down your ideas and we will code together in class. In case you do, however, want to give coding a try - go for it. A possible idea for an extension of the game could be to make the game more like 'snake' you probably used to play all the time on your old Nokia. I have included a respective coding example in the resources. Have a look to get some inspiration! ";
+      var clone = document.importNode(tasks.content, true);
+      clone.querySelector('p').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "3) Jump into Game Development with GitHub";
+      var clone = document.importNode(tasks.content, true);
+      clone.querySelector('h3').textContent = text;
+      document.body.appendChild(clone);
+      
+      var text = "Since we experienced a lot of trouble with Plunkr lately, please use GitHub for your coding. GitHub offers you a variety of advantages that make coding on your own or in a team even more efficient. You can undo any changes you made within a project, you have the possibilty to comment your work and it's also very easy to find project created by others. Maybe somebody else is experiencing the same troubles like you and you can find a solution together. Your last task for this week therefore constitutes of setting uo GitHub for your coding. There are a variety of tutorials that will help you downloading and installing the latest version - I provided several links for you in the resources.";
+      var clone = document.importNode(tasks.content, true);
+      clone.querySelector('p').textContent = text;
+      document.body.appendChild(clone);
+  
+  </script>
 
+  <!--API Call to GitHub-->
+  
+  <h2>Pssst....</h2>
+    <p>One last gimmick I'd like to show you: You are wondering how your team
+    members on GitHub look like? Just type in a username in the little textbox below and you will get to see their avatars straight away!</p>
+  
+     <p>Try out with my GitHub username (Danni123)!</p>
+      <body ng-app="plunker">
+        <div ng-controller="MainCtrl">
+          <input type="text" ng-model="username" placeholder="Enter GitHub username">
+          <p ng-show="callingOut">Calling out....</p>
+          <button ng-click="callAPI()">Get Avatar</button>
+          <img ng-src="{{ avatarSrc }}"></img>
+          <pre> {{ avatarSrc }} </pre>
+        </div>
+      </body>
+    
+    <hr/>
+    
+  <h1>Resources</h1>
+  
+  <h3>HTML5 Canvas Tutorial</h3>
+    <ul>
+      <li><a href="http://diveintohtml5.info/canvas.html">Introduction to Canvas</a></li>
+      <li><a href="http://blog.teamtreehouse.com/how-to-draw-with-html-5-canvas">Drawing with Canvas</a></li>
+      <li><a href="http://billmill.org/static/canvastutorial/index.html">Another Canvas Tutorial</a></li>
+    </ul>
+  
+  <h3>Examples of simple HTML5 Games</h3>
+    <ul>
+      <li><a href="http://thecodeplayer.com/walkthrough/html5-game-tutorial-make-a-snake-game-using-html5-canvas-jquery">Snake Game</a></li>
+      <li><a href="http://blog.lessmilk.com/how-to-make-flappy-bird-in-html5-1/">Flappy Bird Game</a></li>
+      <li><a href="http://code.tutsplus.com/articles/learn-html5-with-this-simple-avoider-game-tutorial--active-9653">Avoider Game</a></li>
+    </ul>
+    
+  <h3>Git Hub Set Up</h3>
+    <ul>
+      <li><a href="http://gamedevelopment.tutsplus.com/tutorials/git-and-github-for-game-developers--gamedev-11507">Tutsplus - Setting up Git</a></li>
+      <li><a href="http://lifehacker.com/5983680/how-the-heck-do-i-use-github">Lifehacker - How the heck do I use GitHub?</a></li>
+      <li><a href="https://help.github.com/articles/set-up-git/">GitHub Help</a></li>
+    </ul>
+  
+  </body>
 </html>
-
-
