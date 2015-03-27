@@ -4,7 +4,7 @@ body {
 }
 body, table {
     font: 11px Tahoma;
-    color: Black;
+    color: #F71BFF;
 }
 
 /*** tetris 168,308 ***/
@@ -13,7 +13,7 @@ body, table {
     position: relative;
     width: 260px;
     height: 310px;
-    border: 1px solid #BAA68E;
+    border: 1px solid #F71BFF;
     background: white;
     margin: 0 auto;
 }
