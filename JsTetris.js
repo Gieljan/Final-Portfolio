@@ -1,4 +1,3 @@
-
 function Tetris() {
 
     var self = this;
@@ -60,7 +59,7 @@ function Tetris() {
         document.getElementById("tetris-nextpuzzle").style.display = "none";
         document.getElementById("tetris-gameover").style.display = "block";
         if (this.highscores.mayAdd(this.stats.getScore())) {
-            var name = prompt("Whaaaat?!\nEnter your name:", "");
+            var name = prompt("Whaaaat? !\nEnter your name:", "");
             if (name && name.trim().length) {
                 this.highscores.add(name, this.stats.getScore());
             }
@@ -212,8 +211,8 @@ function Tetris() {
      */
     function Keyboard() {
 
-        this.up = 29;
-        this.down = 37;
+        this.up = 38;
+        this.down = 40;
         this.left = 37;
         this.right = 38;
         this.n = 78;
@@ -307,11 +306,11 @@ function Tetris() {
          */
         this.reset = function() {
             this.stop();
-            this.level = 0;
+            this.level = 1;
             this.time  = 0;
             this.apm   = 0;
             this.lines = 0;
-            this.score = 0;
+            this.score = 5;
             this.puzzles = 0;
             this.actions = 0;
             this.el.level.innerHTML = this.level;
@@ -330,7 +329,7 @@ function Tetris() {
         this.incTime = function() {
             self.time++;
             self.el.time.innerHTML = self.time;
-            self.apm = parseInt((self.actions / self.time) * 60);
+            self.apm = parseInt((self.actions / self.time) * 90);
             self.el.apm.innerHTML = self.apm;
         }
 
@@ -591,24 +590,24 @@ function Tetris() {
         // width & height must be the same
         this.puzzles = [
             [
-                [0,0,1,1,1],
-                [1,1,0,1,1],
-                [1,0,1,1,1]
+                [0,0,1],
+                [1,1,0],
+                [1,0,1]
             ],
             [
-                [1,0,0,0,1],
-                [0,1,0,0,1],
-                [0,0,1,1,1]
+                [1,0,0],
+                [0,1,1],
+                [0,0,1]
             ],
             [
-                [0,1,1,0,0,1,0],
-                [1,1,1,1,0,1,1],
-                [0,0,0,0,0,0,1]
+                [0,1,1],
+                [1,1,1],
+                [0,0,0]
             ],
             [
-                [1,1,0,0,1,0,1],
-                [0,1,0,0,0,0,1],
-                [1,0,0,1,0,1,0]
+                [1,1,0],
+                [0,1,1],
+                [1,0,0]
             ],
             [
                 [1,1,0,0,1,0],
@@ -642,7 +641,7 @@ function Tetris() {
             this.type = this.nextType;
             this.nextType = random(this.puzzles.length);
             this.position = 0;
-            this.speed = 130 + (700 / this.tetris.stats.getLevel());
+            this.speed = 110 + (700 / this.tetris.stats.getLevel());
             this.running = false;
             this.stopped = false;
             this.board = [];
@@ -1223,7 +1222,7 @@ function Tetris() {
         this.set = function(name, value, seconds, path, domain, secure) {
             var cookie = (name + "=" + escape(value));
             if (seconds) {
-                var date = new Date(new Date().getTime()+seconds*1000);
+                var date = new Date(new Date().getTime()+seconds*2100);
                 cookie += ("; expires="+date.toGMTString());
             }
             cookie += (path    ? "; path="+path : "");
@@ -1267,4 +1266,3 @@ if (!String.prototype.format) {
         return s;
     };
 }
-
