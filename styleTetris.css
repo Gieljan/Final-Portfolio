@@ -11,7 +11,7 @@ body, table {
 
 #tetris {
     position: relative;
-    width: 280px;
+    width: 260px;
     height: 310px;
     border: 1px solid #BAA68E;
     background: white;
@@ -186,20 +186,20 @@ body, table {
 }
 #tetris .block0,
 #tetris .block1 {
-    background: #00FF00;
+    background: #FFFF01;
 }
 #tetris .block2,
 #tetris .block3 {
     background: #FF0080;
 }
 #tetris .block4 {
-    background: #FF0000;
+    background: #F71BFF;
 }
 #tetris .block5 {
-    background: #0040FF;
+    background: #F71BFF;
 }
 #tetris .block6 {
-    background: #CC2EFA;
+    background: #FFFF01;
 }
 
 /*** window ***/
