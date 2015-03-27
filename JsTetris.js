@@ -308,10 +308,10 @@ function Tetris() {
         this.reset = function() {
             this.stop();
             this.level = 1;
-            this.time  += 12;
+            this.time  = 0;
             this.apm   = 0;
             this.lines = 0;
-            this.score += 52;
+            this.score = 5;
             this.puzzles = 0;
             this.actions = 0;
             this.el.level.innerHTML = this.level;
@@ -593,7 +593,7 @@ function Tetris() {
             [
                 [0,0,1],
                 [1,1,1],
-                [0,0,0]
+                [1,1,1]
             ],
             [
                 [1,0,0],
