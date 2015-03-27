@@ -60,7 +60,7 @@ function Tetris() {
         document.getElementById("tetris-nextpuzzle").style.display = "none";
         document.getElementById("tetris-gameover").style.display = "block";
         if (this.highscores.mayAdd(this.stats.getScore())) {
-            var name = prompt("Whaaaat? !\nEnter your name:", "");
+            var name = prompt("Whaaaat?!\nEnter your name:", "");
             if (name && name.trim().length) {
                 this.highscores.add(name, this.stats.getScore());
             }
@@ -212,7 +212,7 @@ function Tetris() {
      */
     function Keyboard() {
 
-        this.up = 38;
+        this.up = 29;
         this.down = 37;
         this.left = 37;
         this.right = 38;
@@ -311,7 +311,7 @@ function Tetris() {
             this.time  = 0;
             this.apm   = 0;
             this.lines = 0;
-            this.score = -5000;
+            this.score = 0;
             this.puzzles = 0;
             this.actions = 0;
             this.el.level.innerHTML = this.level;
