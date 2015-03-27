@@ -1,0 +1,293 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
+
+
+
+/* ! ! ! THIS IS THE MAIN WRAPPER ! ! ! */
+.contentWrapper { 
+	width: 960px;
+	margin: 0 auto; 
+}
+/* END MAIN WRAPPER */
+
+body {
+  font-family: 'Roboto', san serif;
+  background-color: #fff;
+}
+
+/* to style all divs: */
+div {
+}
+
+
+
+/* this styles the text inside the HEADER */
+.webTitle {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 45px;
+  margin: 0 auto;
+  color: #000;
+}
+
+
+
+/* para & heading styles */
+p img{
+  text-align: center;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+
+
+/* link styles */
+a {
+  font-family: 'Roboto';
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
+/* SMALL avatar style (spherical) */
+.avatar-frame,
+.avatar-frame img{
+	width: 40px;
+	height: 40px;
+	-webkit-border-radius: 30px; /* Saf3+, Chrome */
+	border-radius: 30px; /* Opera 10.5, IE 9 */
+	/*-moz-border-radius: 30px;  Disabled for FF1+ */
+  vertical-align:middle;
+}
+.avatar-frame img { margin-right:5px; }
+
+/* this avatar is in the SIDEBAR */
+.myAvatar {
+  height: auto;
+  width: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+/* THIS is the larger avatar style (spherical) */
+.avatar-frame2,
+.avatar-frame2 img{
+	width: 150px;
+	height: 150px;
+	-webkit-border-radius: 100%; 
+	border-radius: 90px 5px 90px 5px;
+  vertical-align:middle;
+}
+.avatar-frame2 img { margin-right:5px; }
+
+
+.avatar-frame3,
+.avatar-frame3 img{
+	width: 150px;
+	height: 150px;
+	-webkit-border-radius: 100%; 
+	border-radius: 100%; /
+  vertical-align:middle;
+}
+.avatar-frame3 img { margin-right:5px; }
+/* END ALL AVATAR STYLES */
+
+
+
+/* HEADER STARTS HERE */
+.header {
+  height: 50%;
+  width: 100%;
+  background-color: #F6E4ED;
+  border-radius:10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  box-shadow: 2px 2px 5px #888888;
+}
+/*HEADER ENDS HERE*/
+
+
+
+/* this styles the div containing the circular links at page bottom */
+.navExternal {
+  float: right;
+  width: auto;
+  height: auto;
+  margin-top: 2px;
+  box-shadow: none;
+}
+
+/* this div contains the photos in the mainContent */
+
+.centerPhoto {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: none;
+}
+
+/* this contains the nav, search form, mainContent & sidebar */
+.mainContentContainer{
+  height: 550px;
+  width: auto;
+  box-shadow: none;
+}
+
+/* NAV STARTS HERE */
+.navMain {
+  float: left;
+  text-align: center;
+  width: 66.31916666666667%;
+  height: 35px;
+  background-color: #ddd;
+  padding-left: 10px;
+  padding-top: 8px;
+  margin-bottom: 10px;
+  border-radius:5px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.navItem {
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* NAV ENDS HERE */
+
+/* SEARCH BOX STARTS HERE */
+.searchBar {
+  float: left;
+  width: 32.63888888888889%;
+  height: 35px;
+  background-color: #ddd;
+  padding-top: 5px;
+  padding-left: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius:5px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+#search-box {
+    position: relative;
+    width: 50px;
+    margin: 0 auto;
+}
+
+#search-form {
+    height: 25px;
+    width: 75%;
+    border: 1px solid #999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 3px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#search-text {
+    font-size: 11px;
+    width: 98%;
+    color: #000;
+    margin-left: 2px;
+    border-width: 0;
+    background: transparent;
+}
+
+#search-button {
+    position: absolute;
+    height: auto;
+    width: 3%;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    border-width: 0;
+    background-color: #999;
+    margin-left: 5px;
+    margin-top: 0;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+/* SEARCH BOX ENDS HERE */
+
+
+
+/* MAIN CONTENT STARTS HERE */
+.mainContent {
+  float: left;
+  width: 66.31916666666667%;
+  height: 100%;
+  background-color: #ddd;
+  padding: 10px;
+  border-radius:10px;
+  box-shadow: 2px 2px 5px #888888;
+}
+/* MAIN CONTENT ENDS HERE */
+
+
+
+/* SIDEBAR STARTS HERE */
+.sidebarRight{
+  float: right;
+  width: 32.63888888888889%;
+  height: 100%;
+  background-color: #ddd;
+  padding: 10px;
+  border-radius:10px;
+  box-shadow: 2px 2px 5px #888888;
+}
+/* SIDEBAR ENDS HERE */
+
+
+
+
+  /* styles every style class starting with "box" */
+	[class^="box"] {
+		float: left;
+    width: 32.63888888888889%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+    padding: 10px;
+    border-radius:10px;
+    box-shadow: 2px 2px 5px #888888;
+    background-color: #F6E4ED;
+	}
+
+.box1 {
+
+}
+
+.box2 {
+  text-align: center;
+  padding: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.box3 {
+  border-radius:10px;
+}
+
+
+
