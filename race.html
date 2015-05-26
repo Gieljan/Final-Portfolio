@@ -4,18 +4,13 @@
 Race
 </title>
 <script>
-
-
 //This fuction will give each car a 1/2 chance to increase its position by 1. When reaching the
-
 //fifth position it win. If they get there at the same time then there will be a tie.
-
 function go(){
  document.Race.Racer1Pos.value = parseInt(document.Race.Racer1Pos.value) + Math.floor(Math.random()*2);
  document.Race.Racer2Pos.value = parseInt(document.Race.Racer2Pos.value) + Math.floor(Math.random()*2);
  document.Race.Racer3Pos.value = parseInt(document.Race.Racer2Pos.value) + Math.floor(Math.random()*2);
 if(document.Race.Racer1Pos.value =="2"){ document.Racer1Image.src= "http://cdn-img.easyicon.net/png/5355/535564.png"; }
-
  else if(document.Race.Racer1Pos.value == "3"){ document.Racer1Image.src= "pos3.jpg"; }
  else if(document.Race.Racer1Pos.value == "4"){ document.Racer1Image.src = "pos4.jpg"; }
  else if(document.Race.Racer1Pos.value == "5"){ document.Racer1Image.src = "pos4.jpg"; }
@@ -24,13 +19,10 @@ if(document.Race.Racer1Pos.value =="2"){ document.Racer1Image.src= "http://cdn-i
  else if(document.Race.Racer2Pos.value == "3"){ document.Racer1Image.src= "pos3.jpg"; }
  else if(document.Race.Racer2Pos.value == "4"){ document.Racer1Image.src = "pos4.jpg"; }
  else if(document.Race.Racer2Pos.value == "5"){ document.Racer1Image.src = "pos4.jpg"; }
-
  if(document.Race.Racer3Pos.value == "2"){ document.Racer3Image.src = "pos2.jpg"; }
  else if(document.Race.Racer3Pos.value == "3"){ document.Racer3Image.src = "pos3.jpg"; }
  else if(document.Race.Racer3Pos.value == "4"){ document.Racer3Image.src = "pos4.jpg"; }
  else if(document.Race.Racer3Pos.value == "5"){ document.Racer3Image.src = "pos5.jpg"; }
-
-
  if(document.Race.Racer1Pos.value < 5 && document.Race.Racer2Pos.value < 5){ setTimeout("go()",1000) }
  else if(parseInt(document.Race.Racer1Pos.value) == 5 && parseInt(document.Race.Racer2Pos.value) == "5"){
   alert("It is a tie!");
@@ -42,13 +34,9 @@ if(document.Race.Racer1Pos.value =="2"){ document.Racer1Image.src= "http://cdn-i
  else {
   R2Win();
  }
-
-
 }
-
 //does a popup saying Racer 1 won and if it was betted on then the amount bet goes into the Walllet
 //otherwise the amount bet is taken out
-
 function R1Win(){
  alert("Racer 1 wins!")
  if(document.Race.betamount.value == "1"){
@@ -59,10 +47,8 @@ function R1Win(){
  }
  resetRacers();
 }
-
 //exactly the same as the previous function except this is for when racer2 wins and the outcome of
 //a wager
-
 function R2Win(){
  alert("Racer 2 wins!");
  if(document.Race.betamount.value == "2"){
@@ -73,7 +59,6 @@ function R2Win(){
  }
   resetRacers();
  }
-
 </script>
 </head>
 <body>
@@ -88,7 +73,7 @@ function R2Win(){
 
 Car 1 position: <input type=text value="1" name="Racer1Pos"><br>
 
-Car 2 position: <input type=text value="1" name="Racer2Pos"><br>
+Car 1 position: <input type=text value="1" name="Racer2Pos"><br>
 
 Car 3 position: <input type=text value="1" name="Racer3Pos"><br>
 
