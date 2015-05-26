@@ -45,13 +45,7 @@ function go(){
 
 function R1Win(){
  alert("Racer 1 wins!")
- if(document.Race.betamount.value == "1"){
-  document.Race.Wallet.value = parseInt(document.Race.Wallet.value)+parseInt(document.Race.wager.value);
- }
- else{
-  document.Race.Wallet.value = parseInt(document.Race.Wallet.value) - parseInt(document.Race.wager.value);
- }
- resetRacers();
+ if(document.Race.betamount.value == "1")
 }
 
 //exactly the same as the previous function except this is for when racer2 wins and the outcome of
@@ -59,13 +53,7 @@ function R1Win(){
 
 function R2Win(){
  alert("Racer 2 wins!");
- if(document.Race.betamount.value == "2"){
-  document.Race.Wallet.value = parseInt(document.Race.Wallet.value)+parseInt(document.Race.wager.value);
- }
- else{
-  document.Race.Wallet.value = parseInt(document.Race.Wallet.value) -parseInt(document.Race.wager.value);
- }
-  resetRacers();
+ if(document.Race.betamount.value == "2")
  }
 
 //After the whole race is over, the images revert to what they were before the race started and if
