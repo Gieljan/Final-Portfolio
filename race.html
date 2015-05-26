@@ -74,18 +74,6 @@ function R2Win(){
   resetRacers();
  }
 
-//After the whole race is over, the images revert to what they were before the race started and if
-//the wallet has reached 0 or below it goes back to the default amount of 100
-
-function resetRacers(){
- document.Race.Racer1Pos.value="1";
- document.Race.Racer2Pos.value="1";
- document.Racer1Image.src="pos1.jpg";
- document.Racer2Image.src="pos1.jpg";
- if (document.Race.Wallet.value <= 0){
-  document.Race.Wallet.value = "100";
- }
-}
 </script>
 </head>
 <body>
@@ -95,11 +83,14 @@ function resetRacers(){
 
 <img src="pos1.jpg" name="Racer1Image"><br>
 <img src="pos1.jpg" name="Racer2Image"><br>
+<img src="pos1.jpg" name="Racer3Image"><br>
 
 
 Car 1 position: <input type=text value="1" name="Racer1Pos"><br>
 
 Car 2 position: <input type=text value="1" name="Racer2Pos"><br>
+
+Car 3 position: <input type=text value="1" name="Racer3Pos"><br>
 
 Which car?: <input type = text value = "1" name ="wager">
 
