@@ -24,33 +24,41 @@ if(document.Race.Racer1Pos.value =="2"){ document.Racer1Image.src= "http://s17.p
  else if(document.Race.Racer3Pos.value == "4"){ document.Racer3Image.src = "pos4.jpg"; }
  else if(document.Race.Racer3Pos.value == "5"){ document.Racer3Image.src = "pos5.jpg"; }
  if(document.Race.Racer1Pos.value < 5 && document.Race.Racer2Pos.value < 5){ setTimeout("go()",1000) }
- else if(parseInt(document.Race.Racer1Pos.value) == 5 && parseInt(document.Race.Racer2Pos.value) == 5 && parseInt(document.Race.Racer3Pos.value) = 5){
+ else if(parseInt(document.Race.Racer1Pos.value) == 5 && parseInt(document.Race.Racer2Pos.value) == "5"){
   alert("It is a tie!");
   resetRacers();
  }
  else if(document.Race.Racer1Pos.value == 5){
   R1Win();
  }
- else if{document.Race.Racer2Pos.value == 5){
+ else {
   R2Win();
  }
- else if(document.Race.Racer3Pos.value == 5){
-  R3Win();
- }
 }
-
+//does a popup saying Racer 1 won and if it was betted on then the amount bet goes into the Walllet
+//otherwise the amount bet is taken out
 function R1Win(){
  alert("Racer 1 wins!")
+ if(document.Race.betamount.value == "1"){
+  document.Race.Wallet.value = parseInt(document.Race.Wallet.value)+parseInt(document.Race.wager.value);
+ }
+ else{
+  document.Race.Wallet.value = parseInt(document.Race.Wallet.value) - parseInt(document.Race.wager.value);
+ }
+ resetRacers();
 }
-
+//exactly the same as the previous function except this is for when racer2 wins and the outcome of
+//a wager
 function R2Win(){
- alert("Racer 2 wins!")
+ alert("Racer 2 wins!");
+ if(document.Race.betamount.value == "2"){
+  document.Race.Wallet.value = parseInt(document.Race.Wallet.value)+parseInt(document.Race.wager.value);
  }
-
-function R3Win(){
- alert("Racer 3 wins!")
+ else{
+  document.Race.Wallet.value = parseInt(document.Race.Wallet.value) -parseInt(document.Race.wager.value);
  }
- 
+  resetRacers();
+ }
 </script>
 </head>
 <body>
